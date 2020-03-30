@@ -1,0 +1,44 @@
+Algorithm:Read and print school info of students
+
+BEGIN
+ Declare Array Student_FName[31],Array Student_LName[31], Array ID_Number[31], Array Tuition[31]
+ Declare Array Balance[31], Array Grade_Level[31], Array Payment_Plan[31], Array School_Fee[31]
+ index as integer
+ Fee_Lower=350000
+ Fee_Upper=400000
+ Fee_Sixth=550000
+ For index 1 to 31 do
+  Print('Please enter your first name')
+  Read(Student_FName[index])
+  Print('Please enter your surname')
+  Read(Student_LName[index]
+  Print('Please enter your ID number')
+  Read(ID_Number[index])
+  Print('Please enter your Payment Plan')
+  Read(Payment_Plan[index])
+  Print('Please enter your grade level')
+  Read(Grade_Level[index])
+  If (Grade_Level[index]= 6) THEN
+   School_Fee[index]= Fee_Sixth
+   Else
+    If (Grade_Level[index]>3) and (Grade_Level[index]<6) THEN
+     School_Fee[index]= Fee_Upper
+	   Else
+	    If (Grade_Level[index]>=1) and (Grade_Level[index]<=3) THEN
+	    School_Fee[index]= Fee_Lower 
+	    EndIF
+	  EndIF
+  EndIF
+  If Payment_Plan[index]="Early_Bird" THEN
+   Tuition[index]=School_Fee[index]*0.9
+   Else
+    If Payment_Plan[index]="Half-Payment" THEN
+	  Tuition[index]=School_Fee[index]*0.95
+	  Balance[index]=Tuition[index]/2
+	  Else 
+	   If Payment_Plan[index]="Per-Term" THEN
+	   Tuition[index]=School_Fee[index]*1.75
+	   Balance[index]=Tuition[index]*2/3
+	   EndIF
+	  EndIF
+  EndIF
